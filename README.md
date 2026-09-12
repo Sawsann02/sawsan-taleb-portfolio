@@ -177,13 +177,14 @@
         }
 
         .nav-logo {
-            font-family: 'Playfair Display', serif;
-            font-size: 1.35rem;
-            font-weight: 600;
-            color: var(--text-primary);
-            text-decoration: none;
-            letter-spacing: -0.01em;
-        }
+    font-family: 'Playfair Display', serif;
+    font-size: 1.35rem;
+    font-weight: 600;
+    color: var(--text-primary);
+    text-decoration: none;
+    letter-spacing: -0.01em;
+    white-space: nowrap;
+}
 
         .nav-logo span {
             color: var(--accent);
@@ -207,11 +208,14 @@
             position: relative;
         }
 
-        .nav-links a:hover,
-        .nav-links a.active {
-            color: var(--accent);
-            background: var(--accent-soft);
-        }
+     .nav-links a:hover {
+    color: var(--accent);
+}
+
+.nav-links a.active {
+    color: var(--accent);
+    background: var(--accent-soft);
+}
 
         .nav-cta {
             background: var(--accent);
@@ -574,22 +578,34 @@
             justify-content: center;
             font-size: 0.85rem;
         }
+/* Top Right */
+.fc-1 {
+    top: 8%;
+    right: -5%;
+    animation-delay: 0s;
+}
 
-        .fc-1 { top: 8%; right: -5%; animation-delay: 0s; }
-        .fc-1 .card-icon { background: rgba(184,134,11,0.12); color: var(--accent); }
+/* Bottom Right */
+.fc-2 {
+    bottom: 10%;
+    right: -5%;
+    top: auto;
+    animation-delay: 1s;
+}
 
-        .fc-2 { top: 35%; right: -12%; animation-delay: 1s; }
-        .fc-2 .card-icon { background: rgba(123,167,167,0.12); color: var(--accent-teal); }
+/* Top Left */
+.fc-4 {
+    top: 8%;
+    left: -5%;
+    animation-delay: 0.5s;
+}
 
-        .fc-3 { bottom: 18%; right: -2%; animation-delay: 2s; }
-        .fc-3 .card-icon { background: rgba(201,168,154,0.15); color: var(--accent-rose); }
-
-        .fc-4 { top: 12%; left: -8%; animation-delay: 0.5s; }
-        .fc-4 .card-icon { background: rgba(184,134,11,0.1); color: var(--accent); }
-
-        .fc-5 { bottom: 10%; left: -6%; animation-delay: 1.5s; }
-        .fc-5 .card-icon { background: rgba(123,167,167,0.1); color: var(--accent-teal); }
-
+/* Bottom Left */
+.fc-5 {
+    bottom: 10%;
+    left: -5%;
+    animation-delay: 1.5s;
+}
         @keyframes float {
             0%, 100% { transform: translateY(0px); }
             50% { transform: translateY(-10px); }
@@ -623,34 +639,14 @@
             box-shadow: var(--shadow-lg);
         }
 
-        .about-image-container::before {
-            content: '';
-            position: absolute;
-            top: 50%;
-            left: 50%;
-            transform: translate(-50%, -50%);
-            font-family: 'Playfair Display', serif;
-            font-size: 8rem;
-            font-weight: 700;
-            color: rgba(184,134,11,0.12);
-        }
-        .about-image-container img {
+  .about-image-container img {
     width: 100%;
     height: 100%;
     object-fit: cover;
+    object-position: center;
     display: block;
 }
 
-        .about-decoration {
-            position: absolute;
-            bottom: -20px;
-            right: -20px;
-            width: 120px;
-            height: 120px;
-            border-radius: var(--radius-lg);
-            border: 2px solid var(--accent);
-            opacity: 0.2;
-        }
 
         .about-content h2 {
             font-size: clamp(1.8rem, 3vw, 2.5rem);
@@ -807,16 +803,17 @@
         }
 
         .project-image {
-            width: 100%;
-            aspect-ratio: 16/10;
-            background: linear-gradient(135deg, var(--accent-soft) 0%, #e8e4dc 50%, var(--bg-secondary) 100%);
-            position: relative;
-            overflow: hidden;
-            display: flex;
-            align-items: center;
-            justify-content: center;
-        }
+    width: 100%;
+    aspect-ratio: 16 / 10;
+    overflow: hidden;
+    background: var(--bg-secondary);
+}
 
+.project-image img {
+    width: 100%;
+    height: 100%;
+object-fit: cover;    display: block;
+}
         .project-image-placeholder {
             font-family: 'Playfair Display', serif;
             font-size: 2rem;
@@ -831,16 +828,9 @@
             transform: scale(1.05);
         }
 
-        .project-image-overlay {
-            position: absolute;
-            bottom: 0;
-            left: 0;
-            right: 0;
-            height: 40%;
-            background: linear-gradient(to top, rgba(255,255,255,0.9), transparent);
-            pointer-events: none;
-        }
-
+  .project-image-overlay {
+    display: none;
+}
         .project-body {
             padding: 24px 28px 28px;
         }
@@ -1009,25 +999,21 @@
             font-weight: 600;
             color: var(--accent);
         }
+.modal-image {
+    width: 100%;
+    aspect-ratio: 16 / 9;
+    border-radius: var(--radius-md);
+    overflow: hidden;
+    margin-bottom: 20px;
+}
 
-        .modal-image {
-            width: 100%;
-            aspect-ratio: 16/9;
-            border-radius: var(--radius-md);
-            background: linear-gradient(135deg, var(--accent-soft), var(--bg-secondary));
-            margin-bottom: 20px;
-            display: flex;
-            align-items: center;
-            justify-content: center;
-        }
-
-        .modal-image span {
-            font-family: 'Playfair Display', serif;
-            font-size: 2.5rem;
-            font-weight: 600;
-            color: var(--accent);
-            opacity: 0.25;
-        }
+.modal-image img {
+    width: 100%;
+    height: 100%;
+    object-fit: contain;
+    display: block;
+    background: var(--bg-secondary);
+}
 
         /* ===== CERTIFICATIONS ===== */
         .cert-grid {
@@ -1700,64 +1686,324 @@
             background: var(--accent-light);
             transform: translateY(-3px);
         }
+        /* =====================================================
+   DARK MODE
+   ===================================================== */
 
+body.dark-mode {
+    /* Backgrounds */
+    --bg-primary: #101827;
+    --bg-secondary: #172235;
+    --bg-card: #1D2A3B;
 
-        /* ===== ACCESSIBILITY IMPROVEMENTS ===== */
-        .skip-link {
-            position: fixed;
-            top: 12px;
-            left: 12px;
-            z-index: 3000;
-            padding: 10px 16px;
-            border-radius: var(--radius-sm);
-            background: var(--bg-dark);
-            color: var(--text-white);
-            text-decoration: none;
-            transform: translateY(-160%);
-            transition: var(--transition);
+    /* Dark Sections */
+    --bg-dark: #0B1220;
+    --bg-dark-secondary: #111B2D;
+
+    /* Text */
+    --text-primary: #F1F5F9;
+    --text-secondary: #B8C2D1;
+    --text-light: #8D99AA;
+    --text-white: #FFFFFF;
+
+    /* Accent */
+    --accent: #8FAECD;
+    --accent-light: #B4C9DE;
+    --accent-soft: #26374D;
+
+    /* Secondary */
+    --accent-rose: #C7B0AA;
+    --accent-teal: #8FB3AF;
+
+    /* Gold */
+    --accent-gold: #C8AD78;
+    --accent-gold-soft: #302B23;
+
+    /* Borders */
+    --border: #34445A;
+    --border-light: #28364A;
+
+    /* Shadows */
+    --shadow-sm: 0 2px 8px rgba(0, 0, 0, 0.20);
+    --shadow-md: 0 4px 20px rgba(0, 0, 0, 0.25);
+    --shadow-lg: 0 8px 40px rgba(0, 0, 0, 0.30);
+    --shadow-xl: 0 16px 60px rgba(0, 0, 0, 0.38);
+}
+
+/* Smooth theme transition */
+body,
+.navbar,
+.mobile-menu,
+.skill-category,
+.project-card,
+.cert-card,
+.service-card,
+.why-card,
+.highlight-tag,
+.floating-card,
+.modal,
+.btn-secondary {
+    transition:
+        background-color 0.3s ease,
+        color 0.3s ease,
+        border-color 0.3s ease,
+        box-shadow 0.3s ease;
+}
+
+        /* ===== PHOTOGRAPHY / HERITAGE GALLERY ===== */
+        .photography {
+            background: var(--bg-primary);
         }
 
-        .skip-link:focus {
+        .photography-intro {
+            max-width: 760px;
+            margin: 0 auto 44px;
+            text-align: center;
+        }
+
+        .photo-note {
+            display: inline-flex;
+            align-items: center;
+            gap: 8px;
+            margin-top: 16px;
+            padding: 8px 14px;
+            border: 1px solid var(--border);
+            border-radius: 999px;
+            color: var(--text-secondary);
+            background: var(--bg-card);
+            font-size: 0.78rem;
+            font-weight: 500;
+        }
+
+        .photo-note i {
+            color: var(--accent);
+        }
+
+        .photo-gallery {
+            columns: 3 300px;
+            column-gap: 18px;
+        }
+
+        .photo-item {
+            position: relative;
+            margin: 0 0 18px;
+            break-inside: avoid;
+            overflow: hidden;
+            border-radius: var(--radius-md);
+            background: var(--bg-card);
+            border: 1px solid var(--border);
+            box-shadow: var(--shadow-sm);
+            cursor: zoom-in;
+        }
+
+        .photo-item img {
+            display: block;
+            width: 100%;
+            height: auto;
+            transition: transform 0.55s ease, filter 0.4s ease;
+        }
+
+        .photo-item::after {
+            content: "";
+            position: absolute;
+            inset: 0;
+            background: linear-gradient(to top, rgba(17, 24, 39, 0.42), transparent 38%);
+            opacity: 0;
+            transition: opacity 0.35s ease;
+            pointer-events: none;
+        }
+
+        .photo-item:hover img {
+            transform: scale(1.025);
+        }
+
+        .photo-item:hover::after {
+            opacity: 1;
+        }
+
+        .photo-caption {
+            position: absolute;
+            left: 16px;
+            right: 16px;
+            bottom: 14px;
+            z-index: 2;
+            color: #fff;
+            font-size: 0.78rem;
+            font-weight: 500;
+            letter-spacing: 0.03em;
+            opacity: 0;
+            transform: translateY(8px);
+            transition: 0.35s ease;
+            pointer-events: none;
+        }
+
+        .photo-item:hover .photo-caption {
+            opacity: 1;
             transform: translateY(0);
         }
 
-        .hamburger {
-            background: transparent;
-            border: 0;
+        .photo-lightbox {
+            position: fixed;
+            inset: 0;
+            z-index: 4000;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            padding: 26px;
+            background: rgba(8, 13, 24, 0.92);
+            backdrop-filter: blur(10px);
+            opacity: 0;
+            pointer-events: none;
+            transition: opacity 0.25s ease;
         }
 
-        .project-card:focus-visible,
-        .hamburger:focus-visible,
-        .modal-close:focus-visible,
-        .project-link:focus-visible,
-        .btn:focus-visible,
-        .btn-submit:focus-visible,
-        .back-to-top:focus-visible {
-            outline: 3px solid var(--accent-light);
+        .photo-lightbox.active {
+            opacity: 1;
+            pointer-events: auto;
+        }
+
+        .photo-lightbox img {
+            max-width: min(1120px, 94vw);
+            max-height: 90vh;
+            object-fit: contain;
+            border-radius: 12px;
+            box-shadow: 0 22px 80px rgba(0,0,0,.45);
+        }
+
+        .photo-lightbox-close {
+            position: fixed;
+            top: 22px;
+            right: 24px;
+            width: 44px;
+            height: 44px;
+            border: 1px solid rgba(255,255,255,.22);
+            border-radius: 50%;
+            background: rgba(255,255,255,.08);
+            color: #fff;
+            font-size: 1.2rem;
+            cursor: pointer;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+        }
+
+        @media (max-width: 768px) {
+            .photo-gallery {
+                columns: 2 220px;
+                column-gap: 12px;
+            }
+            .photo-item { margin-bottom: 12px; }
+        }
+
+        @media (max-width: 480px) {
+            .photo-gallery {
+                columns: 1;
+            }
+            .photo-caption {
+                opacity: 1;
+                transform: none;
+                text-shadow: 0 1px 3px rgba(0,0,0,.45);
+            }
+            .photo-item::after { opacity: .75; }
+        }
+
+
+        /* ===== NAV CTA + THEME TOGGLE POLISH ===== */
+        .nav-cta {
+            white-space: nowrap;
+            padding: 10px 18px !important;
+            font-size: 0.78rem !important;
+            line-height: 1.2;
+            display: inline-flex !important;
+            align-items: center;
+            justify-content: center;
+            min-height: 40px;
+        }
+
+        .theme-toggle {
+            width: 40px;
+            height: 40px;
+            min-width: 40px;
+            border-radius: 50%;
+            border: 1px solid var(--border);
+            background: var(--bg-card);
+            color: var(--accent);
+            display: inline-flex;
+            align-items: center;
+            justify-content: center;
+            cursor: pointer;
+            font-size: 0.95rem;
+            box-shadow: var(--shadow-sm);
+            transition: var(--transition);
+            margin-left: 10px;
+        }
+
+        .theme-toggle:hover {
+            background: var(--accent-soft);
+            border-color: var(--accent);
+            transform: translateY(-1px);
+            box-shadow: var(--shadow-md);
+        }
+
+        .theme-toggle:focus-visible {
+            outline: 2px solid var(--accent);
             outline-offset: 3px;
         }
 
-        .project-link-button {
-            background: transparent;
-            border: 0;
-            padding: 0;
-            font: inherit;
-            cursor: pointer;
+        body.dark-mode .navbar {
+            background: rgba(16, 24, 39, 0.88);
+            border-bottom-color: rgba(255,255,255,0.08);
         }
 
-        @media (prefers-reduced-motion: reduce) {
-            html { scroll-behavior: auto; }
-            *, *::before, *::after {
-                animation-duration: 0.01ms !important;
-                animation-iteration-count: 1 !important;
-                transition-duration: 0.01ms !important;
-                scroll-behavior: auto !important;
+        body.dark-mode .navbar.scrolled {
+            background: rgba(16, 24, 39, 0.96);
+            box-shadow: 0 6px 22px rgba(0,0,0,0.24);
+        }
+
+        body.dark-mode .theme-toggle {
+            background: #1D2A3B;
+            border-color: #34445A;
+            color: #F5D77A;
+        }
+
+        body.dark-mode .theme-toggle:hover {
+            background: #26374D;
+            border-color: #8FAECD;
+        }
+
+        @media (max-width: 1120px) and (min-width: 769px) {
+            .nav-links {
+                gap: 3px;
+            }
+
+            .nav-links a {
+                padding: 8px 10px;
+                font-size: 0.78rem;
+            }
+
+            .nav-cta {
+                padding: 9px 14px !important;
+                font-size: 0.74rem !important;
+            }
+
+            .theme-toggle {
+                width: 38px;
+                height: 38px;
+                min-width: 38px;
+                margin-left: 6px;
             }
         }
+
+        @media (max-width: 768px) {
+            .theme-toggle {
+                margin-left: auto;
+                margin-right: 8px;
+            }
+        }
+
     </style>
 </head>
-<body>
-    <a class="skip-link" href="#main-content">Skip to main content</a>
+<body class="dark-mode">
 
     <!-- Navigation -->
     <nav class="navbar" id="navbar">
@@ -1768,31 +2014,35 @@
                 <li><a href="#about">About</a></li>
                 <li><a href="#skills">Skills</a></li>
                 <li><a href="#projects">Projects</a></li>
+                <li><a href="#photography">Photography</a></li>
                 <li><a href="#certifications">Certifications</a></li>
                 <li><a href="#services">Services</a></li>
                 <li><a href="#contact">Contact</a></li>
-<li><a href="mailto:s.alhaddad1136@gmail.com" class="nav-cta">Let's Work Together</a></li>            </ul>
-            <button class="hamburger" id="hamburger" type="button" aria-label="Open navigation menu" aria-expanded="false" aria-controls="mobileMenu">
+                <li><a href="#contact" class="nav-cta">Let’s Work Together</a></li>
+            </ul>
+            <button type="button" id="theme-toggle" class="theme-toggle" aria-label="Switch to light mode" title="Switch to light mode">
+    <i class="fas fa-sun"></i>
+</button>
+            <div class="hamburger" id="hamburger">
                 <span></span>
                 <span></span>
                 <span></span>
-            </button>
+            </div>
         </div>
     </nav>
 
     <!-- Mobile Menu -->
-    <div class="mobile-menu" id="mobileMenu" aria-label="Mobile navigation">
+    <div class="mobile-menu" id="mobileMenu">
         <a href="#home">Home</a>
         <a href="#about">About</a>
         <a href="#skills">Skills</a>
         <a href="#projects">Projects</a>
+        <a href="#photography">Photography</a>
         <a href="#certifications">Certifications</a>
         <a href="#services">Services</a>
         <a href="#contact">Contact</a>
         <a href="#contact" class="btn btn-primary btn-small">Let's Work Together</a>
     </div>
-
-    <main id="main-content">
 
     <!-- Hero Section -->
     <section class="hero" id="home">
@@ -1820,26 +2070,33 @@
                             <span class="hero-avatar-placeholder">S</span>
                         </div>
                         <!-- Floating UI Cards -->
-                        <div class="floating-card fc-1">
-                            <div class="card-icon"><i class="fas fa-code"></i></div>
-                            <span>Web Development</span>
-                        </div>
-                        <div class="floating-card fc-2">
-                            <div class="card-icon"><i class="fas fa-palette"></i></div>
-                            <span>UI/UX Design</span>
-                        </div>
-                        <div class="floating-card fc-3">
-                            <div class="card-icon"><i class="fas fa-cloud"></i></div>
-                            <span>Cloud Solutions</span>
-                        </div>
-                        <div class="floating-card fc-4">
-                            <div class="card-icon"><i class="fas fa-database"></i></div>
-                            <span>Database Dev</span>
-                        </div>
-                        <div class="floating-card fc-5">
-                            <div class="card-icon"><i class="fas fa-pen-nib"></i></div>
-                            <span>Digital Design</span>
-                        </div>
+                <div class="floating-card fc-1">
+    <div class="card-icon">
+        <i class="fas fa-code"></i>
+    </div>
+    <span>Web Development</span>
+</div>
+
+<div class="floating-card fc-2">
+    <div class="card-icon">
+        <i class="fas fa-palette"></i>
+    </div>
+    <span>UI/UX Design</span>
+</div>
+
+<div class="floating-card fc-4">
+    <div class="card-icon">
+        <i class="fas fa-database"></i>
+    </div>
+    <span>Database Development</span>
+</div>
+
+<div class="floating-card fc-5">
+    <div class="card-icon">
+        <i class="fas fa-pen-nib"></i>
+    </div>
+    <span>Digital Creativity</span>
+</div>
                         
                     </div>
                     
@@ -1855,15 +2112,16 @@
         <div class="container">
             <div class="about-inner">
                 <div class="about-visual reveal">
-                   <div class="about-image-container">
-    <img src="CVV.jpg" alt="Portrait of Sawsan Alhaddad" loading="lazy" decoding="async">
-</div>
+                    <div class="about-image-container">
+                        <!-- Replace with actual photo -->
+                         <img src="file:///C:/Users/User/OneDrive%20-%20University%20of%20Bahrain/Desktop/CVV.jpg">
+                    </div>
                     <div class="about-decoration"></div>
                 </div>
                 <div class="about-content">
                     <span class="section-label reveal">About Me</span>
-                    <h2 class="reveal reveal-delay-1">Passionate about turning<br>ideas into digital reality</h2>
-                    <p class="about-text reveal reveal-delay-2">Sawsan Alhaddad is an information systems graduate from the University of Bahrain with a passion for combining technology, design, and creativity. Her interests include web development, UI/UX design, database management, cloud and IT solutions, and digital content creation. She enjoys transforming ideas into modern, user-friendly, and visually engaging digital experiences. With a creative mindset and a strong interest in technology, she is eager to apply her skills to real-world projects, continue learning, and create meaningful digital solutions.</p>
+                    <h2 class="reveal reveal-delay-1">Turning ideas into meaningful<br>digital experiences</h2>
+                    <p class="about-text reveal reveal-delay-2">I’m anInformation Systems graduate from the University of Bahrain with a strong interest in web development, UI/UX design, and database development, focused on creating practical and user-friendly digital solutions. </p>
                     <div class="about-highlights reveal reveal-delay-3">
                         <div class="highlight-tag"><i class="fas fa-check"></i> Information Systems</div>
                         <div class="highlight-tag"><i class="fas fa-check"></i> Web Development</div>
@@ -1871,19 +2129,10 @@
                         <div class="highlight-tag"><i class="fas fa-check"></i> Digital Creativity</div>
                         <div class="highlight-tag"><i class="fas fa-check"></i> Database Development</div>
                         <div class="highlight-tag"><i class="fas fa-check"></i> Cloud & IT Solutions</div>
-                        <div class="highlight-tag"><i class="fas fa-check"></i> Video Editing</div>
-                        <div class="highlight-tag"><i class="fas fa-check"></i> AR & Snapchat Lens Desig </div>
-                        <div class="highlight-tag"><i class="fas fa-check"></i> Photo Editing </div>
-                        <div class="highlight-tag"><i class="fas fa-check"></i> Social Media Content </div>
-
-
-
-
                     </div>
-                    <a href="https://acrobat.adobe.com/id/urn:aaid:sc:AP:037e28e3-916e-42e1-b997-8821a8e35f16" class="btn btn-primary reveal reveal-delay-4" target="_blank" rel="noopener noreferrer">
+                    <a href="https://acrobat.adobe.com/id/urn:aaid:sc:AP:25f10333-2c11-4fc0-989d-08e938b1534d" class="btn btn-primary reveal reveal-delay-4" target="_blank" rel="noopener noreferrer">
                         <i class="fas fa-download"></i> Download CV
                     </a>
-                   
                 </div>
             </div>
         </div>
@@ -1959,14 +2208,21 @@
     <section class="projects" id="projects">
         <div class="container">
             <div class="section-header">
-                <span class="section-label reveal">Featured Work</span>
-                <h2 class="section-title reveal reveal-delay-1">Projects That Define Me</h2>
-                <p class="section-subtitle reveal reveal-delay-2">Each project reflects my passion for creating meaningful digital experiences through thoughtful design and solid development.</p>
-            </div>
+                <span class="section-label">FEATURED WORK</span>
+
+<h2 class="section-title">Selected Projects</h2>
+
+<p class="section-subtitle">
+    A selection of projects where I combine thoughtful design,
+    technology, and problem-solving to create practical digital experiences.
+</p>
+</div>
             <div class="projects-grid">
                 <!-- Project 1: JVAL Jewelry -->
-                <div class="project-card reveal" role="button" tabindex="0" data-project-index="0" aria-label="View details for JVAL Jewelry Website">
+                <div class="project-card reveal" onclick="openModal(0)">
                     <div class="project-image">
+                            <img src="file:///C:/Users/User/OneDrive%20-%20University%20of%20Bahrain/Desktop/Jval%20Senior%20Project.png" alt="UCAS Project">
+
                         <span class="project-image-placeholder">JVAL</span>
                         <div class="project-image-overlay"></div>
                     </div>
@@ -1978,16 +2234,15 @@
                             <span class="project-tag">3D Technology</span>
                             <span class="project-tag">UI/UX</span>
                         </div>
-                        <a href="https://jvaljewelry.framer.website/" class="project-link" target="_blank" rel="noopener noreferrer">Visit Website <i class="fas fa-external-link-alt"></i></a>
+                        <a href="https://jvaljewelry.framer.website/" class="project-link" target="_blank" rel="noopener noreferrer" onclick="event.stopPropagation(); openModal(0)">View Details <i class="fas fa-arrow-right"></i></a>
                     </div>
                 </div>
-
                 <!-- Project 4: UCAS UI/UX -->
-                <div class="project-card reveal reveal-delay-3" role="button" tabindex="0" data-project-index="3" aria-label="View details for UCAS UI/UX Project">
-                    <div class="project-image" style="background: linear-gradient(135deg, #e8dfd4 0%, #e8e4dc 50%, var(--bg-secondary) 100%);">
-                        <span class="project-image-placeholder">UCAS</span>
-                        <div class="project-image-overlay"></div>
-                    </div>
+                <div class="project-card reveal reveal-delay-3" onclick="openModal(3)">
+                    <div class="project-image">
+    <img src="file:///C:/Users/User/OneDrive%20-%20University%20of%20Bahrain/Desktop/figma.png" alt="UCAS Project">
+    <div class="project-image-overlay"></div>
+</div>
                     <div class="project-body">
                         <h3 class="project-title">UCAS UI/UX Project</h3>
                         <p class="project-description">A user interface and user experience project focused on improving university application-related services.</p>
@@ -1998,41 +2253,121 @@
                             <span class="project-tag">UI Design</span>
                             <span class="project-tag">Prototyping</span>
                         </div>
-                        <a href="https://www.figma.com/proto/Gyiaw4MS1mcx6X6dLdHXfe/%D8%A7%D9%84%D8%A8%D8%B1%D9%88%D8%AC%D9%83%D8%AA?node-id=142-5623&t=TEnIj76cbSxE65xq-1" class="project-link" target="_blank" rel="noopener noreferrer">View Prototype <i class="fas fa-external-link-alt"></i></a>
+                        <a href="https://www.figma.com/proto/Gyiaw4MS1mcx6X6dLdHXfe/%D8%A7%D9%84%D8%A8%D8%B1%D9%88%D8%AC%D9%83%D8%AA?node-id=142-5623&t=TEnIj76cbSxE65xq-1" class="project-link" target="_blank" rel="noopener noreferrer" onclick="event.stopPropagation(); openModal(3)">View Details <i class="fas fa-arrow-right"></i></a>
                     </div>
                 </div>
 
                 <!-- Project 5: Digital Design Collection -->
-                <div class="project-card reveal reveal-delay-4" role="button" tabindex="0" data-project-index="4" aria-label="View details for Digital Design Collection">
+                <div class="project-card reveal reveal-delay-4" onclick="openModal(4)">
                     <div class="project-image" style="background: linear-gradient(135deg, #f5ecd7 0%, #e8e4dc 50%, var(--bg-secondary) 100%);">
-                        <span class="project-image-placeholder">DESIGN</span>
-                        <div class="project-image-overlay"></div>
+                            <img src="file:///C:/Users/User/OneDrive%20-%20University%20of%20Bahrain/Desktop/instagram.png" alt="UCAS Project">
+                        <span class="project-image-placeholder">DDC</span>
+                        <div class="project-image-overlay">
+
+                        </div>
                     </div>
+
                     <div class="project-body">
                         <h3 class="project-title">Digital Design Collection</h3>
-                        <p class="project-description">A creative collection of digital designs including invitations, graduation designs, social media graphics, and visual content created with a modern and elegant style.</p>
+                        <p class="project-description">Showcase of digital products and creative designs including planners, CV templates, cards, and social media designs.</p>
                         <div class="project-tags">
-                            <span class="project-tag">Graphic Design</span>
-                            <span class="project-tag">Canva</span>
-                            <span class="project-tag">Digital Design</span>
+                            <span class="project-tag">Digital Planners</span>
+                            <span class="project-tag">CV Templates</span>
                             <span class="project-tag">Social Media</span>
-                            <span class="project-tag">Visual Content</span>
+                            <span class="project-tag">Creative Design</span>
                         </div>
-                        <button type="button" class="project-link project-link-button" data-open-project="4">View Details <i class="fas fa-arrow-right"></i></button>
+                        <a href="https://www.instagram.com/design.creativity01/" class="project-link" target="_blank" rel="noopener noreferrer" onclick="event.stopPropagation(); openModal(4)">View Details <i class="fas fa-arrow-right"></i></a>
                     </div>
                 </div>
             </div>
         </div>
     </section>
 
+
+    <!-- Photography Section -->
+    <section class="photography" id="photography">
+        <div class="container">
+            <div class="section-header photography-intro">
+                <span class="section-label reveal">Photography</span>
+                <h2 class="section-title reveal reveal-delay-1">Heritage Through My Lens</h2>
+                <p class="section-subtitle reveal reveal-delay-2">
+                    A photography series captured during a 2020 workshop, documenting traditional architecture, 
+                    cultural clothing, community life, and authentic moments of Bahraini heritage.
+                </p>
+                <div class="photo-note reveal reveal-delay-3">
+                    <i class="fas fa-camera"></i>
+                   Photography by Sawsan Alhaddad · 2020
+                </div>
+            </div>
+
+            <div class="photo-gallery">
+
+    <figure class="photo-item reveal"
+    onclick="openPhotoLightbox('///C:/Users/User/OneDrive%20-%20University%20of%20Bahrain/Desktop/photoo/IMG_3280_EDIT.jpg', 'Heritage portrait')">
+
+    <img src="file:///C:/Users/User/OneDrive%20-%20University%20of%20Bahrain/Desktop/photoo/IMG_3280_EDIT.jpg"
+         alt="Heritage portrait photographed by Sawsan Alhaddad"
+         loading="lazy">
+
+    <figcaption class="photo-caption">A Walk Through Heritage</figcaption>
+</figure>
+    <figure class="photo-item reveal"
+        onclick="openPhotoLightbox('///C:/Users/User/OneDrive%20-%20University%20of%20Bahrain/Desktop/photoo/IMG_3351.jpg', 'Traditional village scene')">
+        <img src="file:///C:/Users/User/OneDrive%20-%20University%20of%20Bahrain/Desktop/photoo/IMG_3351.jpg"
+             alt="Traditional village scene photographed by Sawsan Alhaddad"
+             loading="lazy">
+        <figcaption class="photo-caption">Voices of the Village</figcaption>
+    </figure>
+
+    <figure class="photo-item reveal"
+        onclick="openPhotoLightbox('///C:/Users/User/OneDrive%20-%20University%20of%20Bahrain/Desktop/photoo/IMG_3363.jpg', 'Cultural storytelling')">
+        <img src="file:///C:/Users/User/OneDrive%20-%20University%20of%20Bahrain/Desktop/photoo/IMG_3363.jpg"
+             alt="Cultural storytelling photographed by Sawsan Alhaddad"
+             loading="lazy">
+        <figcaption class="photo-caption">A Traditional Encounter</figcaption>
+    </figure>
+
+    <figure class="photo-item reveal"
+        onclick="openPhotoLightbox('///C:/Users/User/OneDrive%20-%20University%20of%20Bahrain/Desktop/photoo/IMG_3448-Edit.jpg', 'Everyday heritage')">
+        <img src="file:///C:/Users/User/OneDrive%20-%20University%20of%20Bahrain/Desktop/photoo/IMG_3448-Edit.jpg"
+             alt="Everyday heritage photographed by Sawsan Alhaddad"
+             loading="lazy">
+        <figcaption class="photo-caption">Life in the Old Village</figcaption>
+    </figure>
+
+    <figure class="photo-item reveal"
+        onclick="openPhotoLightbox('///C:/Users/User/OneDrive%20-%20University%20of%20Bahrain/Desktop/photoo/IMG_3495-Edit.jpg', 'Traditional architecture')">
+        <img src="file:///C:/Users/User/OneDrive%20-%20University%20of%20Bahrain/Desktop/photoo/IMG_3495-Edit.jpg"
+             alt="Traditional architecture photographed by Sawsan Alhaddad"
+             loading="lazy">
+        <figcaption class="photo-caption">Stories at the Traditional Shop</figcaption>
+    </figure>
+
+    <figure class="photo-item reveal"
+        onclick="openPhotoLightbox('///C:/Users/User/OneDrive%20-%20University%20of%20Bahrain/Desktop/photoo/IMG_3521.JPG', 'Community moment')">
+        <img src="file:///C:/Users/User/OneDrive%20-%20University%20of%20Bahrain/Desktop/photoo/IMG_3521.JPG"
+             alt="Community moment photographed by Sawsan Alhaddad"
+             loading="lazy">
+        <figcaption class="photo-caption">Moments of Hospitalityt</figcaption>
+    </figure>
+
+    </section>
+
+    <div class="photo-lightbox" id="photoLightbox" onclick="closePhotoLightbox(event)">
+        <button class="photo-lightbox-close" aria-label="Close photo" onclick="closePhotoLightbox(event, true)">
+            <i class="fas fa-times"></i>
+        </button>
+        <img id="photoLightboxImage" src="" alt="Expanded photography work">
+    </div>
+
     <!-- Project Modal -->
-    <div class="modal-overlay" id="projectModal" aria-hidden="true">
-        <div class="modal" role="dialog" aria-modal="true" aria-labelledby="modalTitle">
+    <div class="modal-overlay" id="projectModal">
+        <div class="modal">
             <div class="modal-header">
                 <div>
                     <h2 class="modal-project-title" id="modalTitle"></h2>
                 </div>
-                <button class="modal-close" id="modalClose" type="button" aria-label="Close project details"><i class="fas fa-times"></i></button>
+                <button class="modal-close" onclick="closeModal()" aria-label="Close modal"><i class="fas fa-times"></i></button>
             </div>
             <div class="modal-body" id="modalBody">
                 <!-- Content injected by JS -->
@@ -2041,11 +2376,9 @@
     </div>
 
     <!-- Certifications Section -->
-     
     <section id="certifications">
         <div class="container">
             <div class="section-header">
-            
                 <span class="section-label reveal">Credentials</span>
                 <h2 class="section-title reveal reveal-delay-1">Certifications & Training</h2>
                 <p class="section-subtitle reveal reveal-delay-2">Continuously learning and growing through professional certifications and specialized training programs.</p>
@@ -2107,13 +2440,9 @@
                     <p class="cert-year">Professional Certification</p>
                     <a href="https://acrobat.adobe.com/id/urn:aaid:sc:AP:59ae51b7-5911-482d-a606-6315a8b558c0" class="cert-link" target="_blank" rel="noopener noreferrer">View Certificate <i class="fas fa-external-link-alt"></i></a>
                 </div>
-
             </div>
-            
         </div>
-        
     </section>
-
 
     <!-- Services Section -->
     <section class="services-section" id="services">
@@ -2165,7 +2494,7 @@
                     <div class="timeline-dot"></div>
                     <div class="timeline-label">Education</div>
                     <h3 class="timeline-title">University of Bahrain</h3>
-                    <p class="timeline-subtitle">Bachelor's Degree in Information Systems | Started: 2020-Finished: 2026</p>
+                    <p class="timeline-subtitle">Bachelor's Degree in Information Systems</p>
                 </div>
                 <div class="timeline-item reveal reveal-delay-1">
                     <div class="timeline-dot"></div>
@@ -2223,7 +2552,11 @@
             <div class="contact-inner">
                 <div class="contact-info reveal">
                     <h3>Let's connect</h3>
-                    <p>Whether you have a project in mind, a question, or just want to say hello . I'm always open to discussing new opportunities and creative ideas.</p>
+                    <p>Whether you have a project in mind, a question, or just want to say hello — I'm always open to discussing new opportunities and creative ideas.</p>
+                    <div class="social-links">
+                        <a href="https://www.linkedin.com/in/sawsan-a-b72647134?utm_source=share_via&utm_content=profile&utm_medium=member_ios" class="social-link" aria-label="LinkedIn" title="LinkedIn" target="_blank" rel="noopener noreferrer"><i class="fab fa-linkedin-in"></i></a>
+                        <a href="mailto:s.alhaddad1136@gmail.com" class="social-link" aria-label="Email" title="Email"><i class="fas fa-envelope"></i></a>
+                    </div>
                 </div>
               <form id="contact-form" class="contact-form">
 
@@ -2295,14 +2628,12 @@
 
 
     <!-- Success / Error Message -->
-    <p id="form-message" role="status" aria-live="polite"></p>
+    <p id="form-message"></p>
 
 </form>
             </div>
         </div>
     </section>
-
-    </main>
 
     <!-- Footer -->
     <footer class="footer">
@@ -2312,15 +2643,16 @@
                     <h3>Sawsan Taleb Alhaddad</h3>
                     <p>Information Systems Graduate | Web Developer | UI/UX Designer | Digital Creator</p>
                 </div>
-                <nav class="footer-nav" aria-label="Footer navigation">
-                    <a href="#home">Home</a>
-                    <a href="#about">About</a>
-                    <a href="#skills">Skills</a>
-                    <a href="#projects">Projects</a>
-                    <a href="#certifications">Certifications</a>
-                    <a href="#services">Services</a>
-                    <a href="#contact">Contact</a>
-                </nav>
+          <nav class="footer-nav" aria-label="Footer navigation">
+    <a href="#home">Home</a>
+    <a href="#about">About</a>
+    <a href="#skills">Skills</a>
+    <a href="#projects">Projects</a>
+    <a href="#photography">Photography</a>
+    <a href="#certifications">Certifications</a>
+    <a href="#services">Services</a>
+    <a href="#contact">Contact</a>
+</nav>
                 <div class="footer-social">
                     <a href="https://www.linkedin.com/in/sawsan-a-b72647134?utm_source=share_via&utm_content=profile&utm_medium=member_ios" aria-label="LinkedIn" title="LinkedIn" target="_blank" rel="noopener noreferrer"><i class="fab fa-linkedin-in"></i></a>
                     <a href="mailto:s.alhaddad1136@gmail.com" aria-label="Email" title="Email"><i class="fas fa-envelope"></i></a>
@@ -2335,6 +2667,28 @@
     <button class="back-to-top" id="backToTop" aria-label="Back to top">
         <i class="fas fa-chevron-up"></i>
     </button>
+    <script>
+const themeToggle = document.getElementById('theme-toggle');
+const themeIcon = themeToggle.querySelector('i');
+
+themeToggle.addEventListener('click', function () {
+
+    document.body.classList.toggle('dark-mode');
+
+    const isDark = document.body.classList.contains('dark-mode');
+
+    if (isDark) {
+        themeIcon.className = 'fas fa-sun';
+        themeToggle.setAttribute('aria-label', 'Switch to light mode');
+        themeToggle.setAttribute('title', 'Switch to light mode');
+    } else {
+        themeIcon.className = 'fas fa-moon';
+        themeToggle.setAttribute('aria-label', 'Switch to dark mode');
+        themeToggle.setAttribute('title', 'Switch to dark mode');
+    }
+
+});
+</script>
 
     <script>
         // ===== Project Data =====
@@ -2397,17 +2751,11 @@
         ];
 
         // ===== Modal Functions =====
-        const projectModal = document.getElementById('projectModal');
-        const modalClose = document.getElementById('modalClose');
-        let lastFocusedElement = null;
-
         function openModal(index) {
             const project = projects[index];
-            if (!project) return;
-
+            const modal = document.getElementById('projectModal');
             const title = document.getElementById('modalTitle');
             const body = document.getElementById('modalBody');
-            lastFocusedElement = document.activeElement;
 
             title.textContent = project.title;
             body.innerHTML = `
@@ -2444,48 +2792,27 @@
                 </div>
             `;
 
-            projectModal.classList.add('active');
-            projectModal.setAttribute('aria-hidden', 'false');
+            modal.classList.add('active');
             document.body.style.overflow = 'hidden';
-            requestAnimationFrame(() => modalClose.focus());
         }
 
         function closeModal() {
-            if (!projectModal.classList.contains('active')) return;
-            projectModal.classList.remove('active');
-            projectModal.setAttribute('aria-hidden', 'true');
+            const modal = document.getElementById('projectModal');
+            modal.classList.remove('active');
             document.body.style.overflow = '';
-            if (lastFocusedElement) lastFocusedElement.focus();
         }
 
-        // Open project cards with mouse or keyboard.
-        document.querySelectorAll('.project-card[data-project-index]').forEach(card => {
-            card.addEventListener('click', (event) => {
-                if (event.target.closest('a, button')) return;
-                openModal(Number(card.dataset.projectIndex));
-            });
-
-            card.addEventListener('keydown', (event) => {
-                if ((event.key === 'Enter' || event.key === ' ') && !event.target.closest('a, button')) {
-                    event.preventDefault();
-                    openModal(Number(card.dataset.projectIndex));
-                }
-            });
+        // Close modal on overlay click
+        document.getElementById('projectModal').addEventListener('click', function(e) {
+            if (e.target === this) closeModal();
         });
 
-        document.querySelectorAll('[data-open-project]').forEach(button => {
-            button.addEventListener('click', () => openModal(Number(button.dataset.openProject)));
+        // Close modal on Escape key
+        document.addEventListener('keydown', function(e) {
+            if (e.key === 'Escape') closeModal();
         });
 
-        modalClose.addEventListener('click', closeModal);
-        projectModal.addEventListener('click', (event) => {
-            if (event.target === projectModal) closeModal();
-        });
-
-        document.addEventListener('keydown', (event) => {
-            if (event.key === 'Escape') closeModal();
-        });
-
+        // ===== Contact Form Handler (Web3Forms) =====
         // ===== Contact Form Handler (Web3Forms) =====
 
 const form = document.getElementById("contact-form");
@@ -2557,7 +2884,6 @@ form.addEventListener("submit", async function(event) {
             entries.forEach(entry => {
                 if (entry.isIntersecting) {
                     entry.target.classList.add('visible');
-                    revealObserver.unobserve(entry.target);
                 }
             });
         }, { threshold: 0.1, rootMargin: '0px 0px -40px 0px' });
@@ -2597,20 +2923,18 @@ form.addEventListener("submit", async function(event) {
         const hamburger = document.getElementById('hamburger');
         const mobileMenu = document.getElementById('mobileMenu');
 
-        function setMobileMenu(open) {
-            hamburger.classList.toggle('active', open);
-            mobileMenu.classList.toggle('active', open);
-            hamburger.setAttribute('aria-expanded', String(open));
-            hamburger.setAttribute('aria-label', open ? 'Close navigation menu' : 'Open navigation menu');
-            document.body.style.overflow = open ? 'hidden' : '';
-        }
-
         hamburger.addEventListener('click', () => {
-            setMobileMenu(!mobileMenu.classList.contains('active'));
+            hamburger.classList.toggle('active');
+            mobileMenu.classList.toggle('active');
+            document.body.style.overflow = mobileMenu.classList.contains('active') ? 'hidden' : '';
         });
 
         mobileMenu.querySelectorAll('a').forEach(link => {
-            link.addEventListener('click', () => setMobileMenu(false));
+            link.addEventListener('click', () => {
+                hamburger.classList.remove('active');
+                mobileMenu.classList.remove('active');
+                document.body.style.overflow = '';
+            });
         });
 
         // ===== Back to Top =====
@@ -2628,18 +2952,46 @@ form.addEventListener("submit", async function(event) {
         });
 
         // ===== Smooth scroll for all anchor links =====
-        const prefersReducedMotion = window.matchMedia('(prefers-reduced-motion: reduce)').matches;
         document.querySelectorAll('a[href^="#"]').forEach(anchor => {
             anchor.addEventListener('click', function(e) {
-                const href = this.getAttribute('href');
-                if (!href || href === '#') return;
-                const target = document.querySelector(href);
+                e.preventDefault();
+                const target = document.querySelector(this.getAttribute('href'));
                 if (target) {
-                    e.preventDefault();
-                    target.scrollIntoView({ behavior: prefersReducedMotion ? 'auto' : 'smooth' });
+                    target.scrollIntoView({ behavior: 'smooth' });
                 }
             });
+
         });
     </script>
+
+    <script>
+        function openPhotoLightbox(src, alt) {
+            const box = document.getElementById('photoLightbox');
+            const img = document.getElementById('photoLightboxImage');
+            img.src = src;
+            img.alt = alt;
+            box.classList.add('active');
+            document.body.style.overflow = 'hidden';
+        }
+
+        function closePhotoLightbox(event, forceClose = false) {
+            const box = document.getElementById('photoLightbox');
+            if (forceClose || event.target === box) {
+                box.classList.remove('active');
+                document.body.style.overflow = '';
+            }
+        }
+
+        document.addEventListener('keydown', function(e) {
+            if (e.key === 'Escape') {
+                const box = document.getElementById('photoLightbox');
+                if (box && box.classList.contains('active')) {
+                    box.classList.remove('active');
+                    document.body.style.overflow = '';
+                }
+            }
+        });
+    </script>
+
 </body>
 </html>
